@@ -3,6 +3,11 @@ package com.gnt.mapper;
 import java.util.List;
 
 /**
+ * BaseMapper of other Mapper class.
+ * All of Sql Metohd Interface statement in this class, 
+ * other subclass(Mapper class) extend this with empty, 
+ * and the Mapper.xml that correspond of subclass choose 
+ * which SQL statement of SQL method have to achieve. 
  * 
  * @author Belong.
  * @param <K>		xxxKey
@@ -64,4 +69,6 @@ public interface BaseMapper<K, V> {
      * @mbg.generated
      */
     int updateByPrimaryKey(V v);
+    
+    List<V> selectAll();
 }

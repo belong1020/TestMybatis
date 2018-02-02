@@ -13,7 +13,7 @@ import com.gnt.entity.User;
 import com.gnt.entity.UserKey;
 import com.gnt.mapper.UserMapper;
 
-
+@Deprecated
 public class UserController {
 
 	public static SqlSessionFactory sqlSessionFactory;

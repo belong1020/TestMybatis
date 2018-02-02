@@ -1,41 +1,41 @@
 package com.gtn;
 
-import java.io.Console;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.gnt.controller.UserController;
+import com.gnt.controller.BaseController;
 import com.gnt.entity.User;
-import com.gnt.mapper.BaseMapper;
-import com.gnt.mapper.imp.BaseMapperImpl;
-import com.gnt.service.BaseService;
+import com.gnt.entity.UserKey;
+import com.gnt.mapper.UserMapper;
 
 public class TestUserService {
 
-	BaseService<BaseMapper<String, String>, String> service;
-
 	@Before
-	public void setUp() throws Exception {
-		service = new BaseService<BaseMapper<String, String>, String>(new BaseMapperImpl<String, String>());
+	public void setUp() {
 	}
 
 	@Test
 	public void testSelectByPrimeryKey() {
-		// System.out.println( service.selectByPrimeryKey("1") );
-		System.out.println(UserController.selectByPrimaryKey(1));
-
+		UserKey uKey = new UserKey();
+		uKey.setId(1);
+		
+		System.out.println(BaseController.selectByPrimaryKey(uKey, UserMapper.class));
+		
 	}
-
+	
 	@Test
 	public void testSelectAll() {
-		
-		List<User> selectAll = UserController.selectAll();
-		selectAll.forEach((user) -> {
+		List<User> list = 	BaseController.selectAll(UserMapper.class);
+		list.forEach((user)->{
 			System.out.println(user.toString());
-		});
-
+		});		
 	}
+	
+	public static void main(String[] args) {
+		TestUserService t1 = new TestUserService();
+		t1.testSelectAll();
+	}
+	
 }

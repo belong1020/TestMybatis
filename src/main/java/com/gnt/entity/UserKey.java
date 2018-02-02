@@ -1,7 +1,7 @@
 package com.gnt.entity;
 
 import java.io.Serializable;
-
+ 
 public class UserKey implements Serializable {
     /**
      *

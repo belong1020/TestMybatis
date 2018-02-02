@@ -1,5 +1,8 @@
 package com.gnt.mapper;
 
-public interface ProduceMapper extends BaseMapper {
-	
+import com.gnt.entity.Produce;
+import com.gnt.entity.ProduceKey;
+
+public interface ProduceMapper extends BaseMapper<ProduceKey, Produce> {
+	 
 }

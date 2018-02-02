@@ -1,9 +1,7 @@
 package com.gnt.mapper;
 
-import java.util.List;
-
 import com.gnt.entity.User;
+import com.gnt.entity.UserKey;
 
-public interface UserMapper extends BaseMapper {
-	List<User> selectAll();
+public interface UserMapper extends BaseMapper<UserKey, User> {
 }
